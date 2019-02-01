@@ -20,9 +20,9 @@ def getWeight():
         try:
             # this will fail if alpha characters have been entered
             weight = float(weight)
-            if (weight<0):
+            if (weight < 0):
                 print('Invalid input. No negative values or '
-                  'non-numbers allowed\n')
+                      'non-numbers allowed\n')
                 continue
             NAN = False
         except ValueError:
@@ -55,9 +55,9 @@ def getHeight():
         try:
             # this will fail if alpha characters have been entered
             height = float(height)
-            if (height<0):
+            if (height < 0):
                 print('Invalid input. No negative values or '
-                  'non-numbers allowed\n')
+                      'non-numbers allowed\n')
             NAN = False
         except ValueError:
             print('Invalid input. No negative values or non-numbers allowed\n')
