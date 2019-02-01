@@ -15,12 +15,8 @@ def test_calcBMI_english():
     assert math.isclose(answer, expected, rel_tol=.02)
 
 
-def test_categories():
-    u = 'underweight'
-    n = 'normal'
-    o = 'overweight'
-    f = 'obese'
-    assert u == youFat(17.0)
-    assert n == youFat(22)
-    assert o == youFat(28.3234)
-    assert f == youFat(32)
+@pytest.mark.parametrize("bmi, expected", [(14, 'underweight'),
+                                           (23.23, 'normal'), (26.765433,
+                                           'overweight'), (31.0, 'obese')])
+def test_categories(bmi, expected):
+    assert youFat(bmi) == expected
