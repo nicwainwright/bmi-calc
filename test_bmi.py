@@ -3,14 +3,10 @@ import math
 import pytest
 
 
-def test_calcBMI_metric():
-    answer = calcBMI(60, 'kg', 1.65, 'm')
-    expected = 22.03
-    assert math.isclose(answer, expected, rel_tol=.02)
-
-
-def test_calcBMI_english():
-    answer = calcBMI(132, 'lbs', 65, 'in')
+@pytest.mark.parametrize("weight, weight_unit, height, height_unit",
+                         [(60, 'kg', 1.65, 'm'), (132, 'lbs', 65, 'in')])
+def test_calcBMI(weight, weight_unit, height, height_unit):
+    answer = calcBMI(weight, weight_unit, height, height_unit)
     expected = 22.03
     assert math.isclose(answer, expected, rel_tol=.02)
 
